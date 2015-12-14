@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 #define RFID_READ 0x01
-#define txPin 6
-#define rxPin 8
+#define txPin 11
+#define rxPin 10
 
 SoftwareSerial mySerial(rxPin, txPin);
 int val;
@@ -64,14 +64,14 @@ if(mySerial.available() > 0) {
     Serial.println("-----------------");
     }  
 */
-	for(int i = 0; mySerial.available() > 0; i++){
-	    
+  for(int i = 0; mySerial.available() > 0; i++){
+      
     val = mySerial.read();
-	Serial.print(++i);	
+  Serial.print(++i);  
     Serial.print("th:");
     Serial.println(val, HEX);
     Serial.println("-----------------");
-	}
-	
+  }
+  
 delay(750);
 }
